@@ -1,3 +1,4 @@
+import 'package:eshop/screens/Category_screen.dart';
 import 'package:eshop/screens/home_screen.dart';
 import 'package:eshop/screens/splash_screen.dart';
 import 'package:eshop/utils/colors.dart';
@@ -18,7 +19,7 @@ class RootApp extends StatelessWidget {
         fontFamily: 'cera-pro',
         primarySwatch: primaryColor,
       ),
-      home: HomeScreen(),
+      home: CategoryScreen(),
       routes: {'/home': (_) => HomeScreen()},
     );
   }

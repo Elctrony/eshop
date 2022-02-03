@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="89" viewBox="0 0 105 89">
+  <g id="main_card" transform="translate(-50 -370)">
+    <rect id="Bg" width="105" height="89" rx="25" transform="translate(50 370)" fill="#7584f2" opacity="0.1"/>
+    <g id="mannequin_1" data-name="mannequin 1" transform="translate(79 385)">
+      <g id="Icon">
+        <g id="Group">
+          <g id="Group-2" data-name="Group">
+            <g id="Group-3" data-name="Group">
+              <g id="Group-4" data-name="Group">
+                <g id="Group-5" data-name="Group">
+                  <g id="Group-6" data-name="Group">
+                    <g id="Group-7" data-name="Group">
+                      <g id="Group-8" data-name="Group">
+                        <path id="Vector" d="M48,24A24,24,0,1,1,24,0,24,24,0,0,1,48,24Z" fill="#7584f2"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <path id="Vector-2" data-name="Vector" d="M2.82,36.74l5.7,5.7A24.006,24.006,0,0,0,30.893,21.03L14.275,4.412l-.322.132L9.408,0,0,23.575l6.463,6.463v5.881Z" transform="translate(16.974 5.514)" fill="#4855b7"/>
+        <path id="Vector-3" data-name="Vector" d="M5.612,17.927V0H2.8V17.927H0V20.74H8.411V17.927Z" transform="translate(19.794 21.514)" fill="#fff"/>
+        <path id="Vector-4" data-name="Vector" d="M1.395,17.927V0H0V20.74H4.194V17.927Z" transform="translate(24.011 21.514)" fill="#e9edf5"/>
+        <g id="Group-9" data-name="Group">
+          <path id="Vector-5" data-name="Vector" d="M14.5,4.412l-3.575-1.06a1.8,1.8,0,0,1-1.291-1.73V0H4.866V1.622a1.8,1.8,0,0,1-1.291,1.73L0,4.412V8.384l1.89,6.143a5.573,5.573,0,0,1-.377,4.2,13.809,13.809,0,0,0-.8,1.874,9.18,9.18,0,0,0-.489,2.974H14.312v-.118a8.993,8.993,0,0,0-.327-2.443,13.8,13.8,0,0,0-.894-2.334l-.025-.051a5.573,5.573,0,0,1-.356-3.987L14.5,8.384V4.412Z" transform="translate(16.751 5.514)" fill="#ffce00"/>
+        </g>
+        <g id="Group-10" data-name="Group">
+          <path id="Vector-6" data-name="Vector" d="M7.238,8.384V4.412L3.663,3.352a1.8,1.8,0,0,1-1.291-1.73V0H0V23.575H7.052v-.118a8.994,8.994,0,0,0-.327-2.443,13.808,13.808,0,0,0-.894-2.334l-.025-.051a5.573,5.573,0,0,1-.356-3.987Z" transform="translate(24.011 5.514)" fill="#fdba12"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

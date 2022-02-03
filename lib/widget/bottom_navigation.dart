@@ -2,8 +2,10 @@ import 'package:eshop/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class BottomWidget extends StatelessWidget {
-  const BottomWidget({Key? key}) : super(key: key);
-
+  late int i;
+  BottomWidget(index, {Key? key}) : super(key: key) {
+    i = index;
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,15 +24,15 @@ class BottomWidget extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.home_outlined,
-              color: selectedIconColor,
+              color: i == 0 ? selectedIconColor : iconColor,
               size: 35,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.search,
-              color: iconColor,
+              color: i == 1 ? selectedIconColor : iconColor,
               size: 35,
             ),
           ),
@@ -48,17 +50,17 @@ class BottomWidget extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.favorite_border,
-              color: iconColor,
+              color: i == 2 ? selectedIconColor : iconColor,
               size: 35,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.person_outline,
-              color: iconColor,
+              color: i == 3 ? selectedIconColor : iconColor,
               size: 35,
             ),
           ),
