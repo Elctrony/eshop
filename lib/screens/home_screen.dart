@@ -1,10 +1,18 @@
 import 'package:eshop/utils/colors.dart';
-import 'package:eshop/widget/bottom_navigation.dart';
+import 'package:eshop/widgets/bottom_navigation.dart';
+import 'package:eshop/widgets/item_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
+  List<Map> itemsList = [
+    {'name': 'Air Jorden', 'path': 'assets/images/airjorden.png', 'price': 50},
+    {'name': 'Hoodie', 'path': 'assets/images/hoodie.png', 'price': 30},
+    {'name': 'IPhone', 'path': 'assets/images/iphone.png', 'price': 1600}
+  ];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -39,17 +47,24 @@ class HomeScreen extends StatelessWidget {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              prefixIcon: const Icon(
-                                Icons.search,
-                                color: iconColor,
+                              prefix: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 12),
+                                margin: const EdgeInsets.only(top: 6),
+                                child: SvgPicture.asset(
+                                  'assets/images/search.svg',
+                                  color: iconColor,
+                                  width: 15,
+                                ),
                               ),
                               hintText: 'Search....',
                               suffixIcon: CircleAvatar(
                                 backgroundColor: containerBackground,
                                 child: IconButton(
-                                  icon: const Icon(
-                                    Icons.mic_none,
+                                  icon: SvgPicture.asset(
+                                    'assets/images/mic.svg',
                                     color: iconColor,
+                                    width: 15,
                                   ),
                                   onPressed: () => print('Mic'),
                                 ),
@@ -59,8 +74,9 @@ class HomeScreen extends StatelessWidget {
                       CircleAvatar(
                         radius: 25,
                         child: IconButton(
-                          icon: const Icon(
-                            Icons.shopping_cart_outlined,
+                          icon: SvgPicture.asset(
+                            'assets/images/cart.svg',
+                            width: 20,
                           ),
                           onPressed: () => print('typedd'),
                         ),
@@ -89,8 +105,12 @@ class HomeScreen extends StatelessWidget {
                     vertical: 12.0,
                   ),
                   child: ListView.builder(
-                    itemBuilder: (ctx, i) => FeaturedCard(),
-                    itemCount: 3,
+                    itemBuilder: (ctx, i) => MiniItemCard(
+                      name: itemsList[i]['name'],
+                      path: itemsList[i]['path'],
+                      price: itemsList[i]['price'],
+                    ),
+                    itemCount: itemsList.length,
                     scrollDirection: Axis.horizontal,
                   ),
                 ),
@@ -137,7 +157,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomWidget(0),
     );
   }
 }
@@ -186,7 +205,16 @@ class _AnnouncementCardState extends State<AnnouncementCard> {
   }
 }
 
-class FeaturedCard extends StatelessWidget {
+class MiniItemCard extends StatelessWidget {
+  const MiniItemCard(
+      {Key? key,
+      @required this.name,
+      @required this.path,
+      @required this.price})
+      : super(key: key);
+  final name;
+  final path;
+  final price;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -203,7 +231,7 @@ class FeaturedCard extends StatelessWidget {
               height: 120,
               width: 150,
               color: const Color.fromRGBO(208, 227, 250, 1),
-              child: Image.asset('assets/images/airjorden.png'),
+              child: Image.asset(path),
             ),
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25),
@@ -218,85 +246,26 @@ class FeaturedCard extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      'Air jordan',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+                      name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w400, fontSize: 18),
                       textAlign: TextAlign.start,
                     ),
                     Text(
-                      '\$50',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                      '\$$price',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 15),
                     )
                   ],
                 ),
                 IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.favorite_border))
+                    onPressed: () {},
+                    icon: SvgPicture.asset('assets/images/favorite.svg'))
               ],
             ),
           )
-        ],
-      ),
-    );
-  }
-}
-
-class ItemCard extends StatelessWidget {
-  const ItemCard({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: const Color.fromRGBO(255, 255, 255, 1),
-      ),
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      height: 120,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            child: Container(
-              height: 120,
-              color: const Color.fromRGBO(255, 222, 155, 1),
-              child: SizedBox(
-                width: 90,
-                child: Image.asset(
-                  'assets/images/tshirt.png',
-                ),
-              ),
-            ),
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(25),
-              bottomLeft: Radius.circular(25),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                'Nike Air Zoom',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
-              ),
-              Text(
-                'Reinvigorate your stride with the Nike Air Zoom Pegasus 37',
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
-                overflow: TextOverflow.clip,
-              ),
-              Text(
-                '\$60',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-              ),
-            ],
-          )),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border))
         ],
       ),
     );

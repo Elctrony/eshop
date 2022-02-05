@@ -1,5 +1,6 @@
-import 'package:eshop/screens/Category_screen.dart';
+import 'package:eshop/screens/category_screen.dart';
 import 'package:eshop/screens/home_screen.dart';
+import 'package:eshop/screens/my_products.dart';
 import 'package:eshop/screens/splash_screen.dart';
 import 'package:eshop/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -15,12 +16,15 @@ class RootApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(249, 108, 5, 1),
+        primaryColor: const Color.fromRGBO(249, 108, 5, 1),
         fontFamily: 'cera-pro',
         primarySwatch: primaryColor,
       ),
-      home: CategoryScreen(),
-      routes: {'/home': (_) => HomeScreen()},
+      home: MyProducts(),
+      routes: {
+        '/home': (_) => HomeScreen(),
+        '/category': (_) => CategoryScreen(),
+      },
     );
   }
 }

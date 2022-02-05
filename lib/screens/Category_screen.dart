@@ -1,5 +1,5 @@
 import 'package:eshop/utils/colors.dart';
-import 'package:eshop/widget/bottom_navigation.dart';
+import 'package:eshop/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -117,7 +117,6 @@ class CategoryScreen extends StatelessWidget {
           )
         ],
       )),
-      bottomNavigationBar: BottomWidget(1),
     );
   }
 }
