@@ -1,3 +1,4 @@
+import 'package:eshop/screens/all_product.dart';
 import 'package:eshop/screens/category_screen.dart';
 import 'package:eshop/screens/home_screen.dart';
 import 'package:eshop/screens/my_products.dart';
@@ -21,7 +22,7 @@ class RootApp extends StatelessWidget {
         fontFamily: 'cera-pro',
         primarySwatch: primaryColor,
       ),
-      home: ProductDetails(),
+      home: AllProduct(),
       routes: {
         '/home': (_) => HomeScreen(),
         '/category': (_) => CategoryScreen(),
