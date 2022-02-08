@@ -17,4 +17,4 @@ const primaryColor = MaterialColor(0xF96C05, const {
 const containerBackground = Colors.white;
 const iconColor = Colors.black;
 final selectedIconColor = Colors.orange[600];
-const backgroundColor = Color.fromRGBO(250, 250, 250, 0.98);
+const backgroundColor = Color.fromRGBO(250, 250, 250, 1);
