@@ -147,56 +147,57 @@ class CartScreen extends StatelessWidget {
               SizedBox(
                 height: 12,
               ),
-              Container(
-                padding: EdgeInsets.all(6),
+              Card(
                 color: Colors.white.withOpacity(1.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          'Total Products',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        Text(
-                          '1',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        )
-                      ],
-                    ),
-                    const VerticalDivider(
-                      color: Colors.black,
-                      thickness: 3,
-                      indent: 20,
-                      endIndent: 0,
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Total Price',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        ),
-                        Text(
-                          '110',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black),
-                        )
-                      ],
-                    )
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: const [
+                          Text(
+                            'Total Products',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            '1',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          )
+                        ],
+                      ),
+                      const VerticalDivider(
+                        color: Colors.black,
+                        thickness: 1.5,
+                        width: 10,
+                        key: Key('Divider'),
+                      ),
+                      Column(
+                        children: const [
+                          Text(
+                            'Total Price',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            '110',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
