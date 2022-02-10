@@ -3,6 +3,7 @@ import 'package:eshop/screens/cart_screen.dart';
 import 'package:eshop/screens/category_screen.dart';
 import 'package:eshop/screens/checkout_screen.dart';
 import 'package:eshop/screens/home_screen.dart';
+import 'package:eshop/screens/login_screen.dart';
 import 'package:eshop/screens/my_products.dart';
 import 'package:eshop/screens/product_details.dart';
 import 'package:eshop/screens/signup_screen.dart';
@@ -25,7 +26,7 @@ class RootApp extends StatelessWidget {
         fontFamily: 'cera-pro',
         primarySwatch: primaryColor,
       ),
-      home: SignupScreen(),
+      home: LoginScreen(),
       routes: {
         '/home': (_) => HomeScreen(),
         '/category': (_) => CategoryScreen(),

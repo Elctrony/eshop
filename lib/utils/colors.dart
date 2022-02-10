@@ -18,3 +18,4 @@ const containerBackground = Colors.white;
 const iconColor = Colors.black;
 final selectedIconColor = Colors.orange[600];
 const backgroundColor = Color.fromRGBO(250, 250, 250, 1);
+final textButtonColor = Colors.orange[700];
