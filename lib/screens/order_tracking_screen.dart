@@ -34,7 +34,7 @@ class OrderTrackingScreen extends StatelessWidget {
                 const Expanded(child: SizedBox()),
                 const Text('Order Tracking',
                     style:
-                        TextStyle(fontSize: 23, fontWeight: FontWeight.w500)),
+                        TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
                 const Expanded(child: SizedBox()),
                 const CircleAvatar(
                   radius: 35,
@@ -45,31 +45,35 @@ class OrderTrackingScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: size.width,
-            height: 35,
-            child: ListView.builder(
-                itemCount: _items.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: ((context, index) => TextButton(
-                    onPressed: () {
-                      pageController.animateToPage(index,
-                          duration: Duration(milliseconds: 300),
-                          curve: Curves.ease);
-                    },
-                    child: Text(
-                      _items[index],
-                      style: TextStyle(
-                          color: _index == index
-                              ? Colors.orange[600]
-                              : Colors.grey,
-                          fontSize: 16),
-                    )))),
-          ),
+          StatefulBuilder(builder: (context, setState) {
+            return SizedBox(
+              width: size.width,
+              height: 35,
+              child: ListView.builder(
+                  itemCount: _items.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: ((context, index) => TextButton(
+                      onPressed: () {
+                        pageController.animateToPage(index,
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.ease);
+                        setState(() => _index = index);
+                      },
+                      child: Text(
+                        _items[index],
+                        style: TextStyle(
+                            color: _index == index
+                                ? Colors.orange[600]
+                                : Colors.grey,
+                            fontSize: 16),
+                      )))),
+            );
+          }),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: PageView(
+                physics: const NeverScrollableScrollPhysics(),
                 controller: pageController,
                 children: [
                   PendingList(),
