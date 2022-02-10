@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^1.0.3
   flutter_rating_bar: ^4.0.0
   flutter_signin_button: ^2.0.0
+  flutter_slidable: ^1.2.0
 
 dev_dependencies:
   flutter_test:
