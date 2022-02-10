@@ -41,7 +41,7 @@ class SignupScreen extends StatelessWidget {
               ),
               SvgPicture.asset('assets/images/name.svg'),
               SizedBox(
-                height: 60,
+                height: 50,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -201,7 +201,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: 6,
               ),
               SizedBox(
                 width: size.width,
@@ -214,14 +214,11 @@ class SignupScreen extends StatelessWidget {
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 18,
                         color: Colors.white,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 6,
               ),
             ],
           ),
