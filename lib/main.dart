@@ -6,7 +6,7 @@ import 'package:eshop/screens/confirmation_screen.dart';
 import 'package:eshop/screens/home_screen.dart';
 import 'package:eshop/screens/login_screen.dart';
 import 'package:eshop/screens/my_products.dart';
-import 'package:eshop/screens/order_tracking_screen.dart';
+import 'package:eshop/screens/order_tracking.dart';
 import 'package:eshop/screens/product_details.dart';
 import 'package:eshop/screens/signup_screen.dart';
 import 'package:eshop/screens/splash_screen.dart';
@@ -28,10 +28,11 @@ class RootApp extends StatelessWidget {
         fontFamily: 'cera-pro',
         primarySwatch: primaryColor,
       ),
-      home: OrderTrackingScreen(),
+      home: HomeScreen(),
       routes: {
         '/home': (_) => HomeScreen(),
         '/category': (_) => CategoryScreen(),
+        '/cart': (_) => CartScreen(),
       },
     );
   }

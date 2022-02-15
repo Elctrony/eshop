@@ -8,7 +8,7 @@ import 'package:page_view_indicators/circle_page_indicator.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   List<Map> itemsList = [
-    {'name': 'Air Jorden', 'path': 'assets/images/airjorden.png', 'price': 50},
+    {'name': 'Nike', 'path': 'assets/images/airjorden.png', 'price': 50},
     {'name': 'Hoodie', 'path': 'assets/images/hoodie.png', 'price': 30},
     {'name': 'IPhone', 'path': 'assets/images/iphone.png', 'price': 1600}
   ];
