@@ -1,14 +1,12 @@
-import 'dart:math';
-
 import 'package:eshop/utils/colors.dart';
-import '../widgets/bottom_navigation.dart';
-import 'package:eshop/widgets/item_card.dart';
+import 'package:eshop/widgets/bottom_navigation.dart';
 import 'package:eshop/widgets/mini_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyProducts extends StatelessWidget {
-  MyProducts({Key? key}) : super(key: key);
+class FavouriteScreen extends StatelessWidget {
+  FavouriteScreen({Key? key}) : super(key: key);
+
   final List<Map<String, dynamic>> listItem = [
     {
       'title': 'Apple Watch',
@@ -60,6 +58,7 @@ class MyProducts extends StatelessWidget {
       'isFavourite': true,
     }
   ];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -81,14 +80,15 @@ class MyProducts extends StatelessWidget {
                     'Your Product',
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                   ),
-                  SvgPicture.asset(
-                    'assets/images/more.svg',
-                  ),
+                  const CircleAvatar(
+                    radius: 35,
+                    backgroundImage: AssetImage(
+                      'assets/images/profile.png',
+                    ),
+                  )
                 ],
               ),
               const SizedBox(height: 18),
-              const ItemCard(),
-              const SizedBox(height: 16),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -101,8 +101,6 @@ class MyProducts extends StatelessWidget {
                     path: listItem[index]['img'],
                     price: listItem[index]['price'],
                     isFavourite: listItem[index]['isFavourite'],
-                    color:
-                        colorAvaliable[Random().nextInt(colorAvaliable.length)],
                   ),
                 ),
               )
@@ -110,7 +108,7 @@ class MyProducts extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationWidget(1),
+      bottomNavigationBar: BottomNavigationWidget(2),
     );
   }
 }
