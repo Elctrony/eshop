@@ -105,7 +105,7 @@ class CategoryScreen extends StatelessWidget {
                             Text(
                               '${itemList[i]['name']}',
                               style: const TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 20),
+                                  fontWeight: FontWeight.w500, fontSize: 18),
                             )
                           ],
                         ),

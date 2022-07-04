@@ -31,4 +31,4 @@ final colorAvaliable = [
   Color.fromRGBO(217, 200, 255, 1),
   Color.fromRGBO(255, 239, 233, 1),
   Color.fromRGBO(182, 215, 255, 1),
-]..shuffle();
+];

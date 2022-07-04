@@ -1,9 +1,58 @@
+import 'dart:math';
+
+import 'package:eshop/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemCard extends StatelessWidget {
-  const ItemCard({Key? key}) : super(key: key);
+  ItemCard({Key? key, required this.item,required this.color}) : super(key: key);
 
+  Map item = {};
+  final List<Map<String, dynamic>> listItem = [
+    {
+      'title': 'Apple Watch',
+      'img': 'assets/images/apple.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 59.99,
+    },
+    {
+      'title': 'IPhone',
+      'img': 'assets/images/iphone.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 1059.99,
+    },
+    {
+      'title': 'Air jorden',
+      'img': 'assets/images/airjorden.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 79.99,
+    },
+    {
+      'title': 'Airpods',
+      'img': 'assets/images/airpod_product.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 64.99,
+    },
+    {
+      'title': 'Amazon Speakre',
+      'img': 'assets/images/amazon.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 159.99,
+    },
+    {
+      'title': 'Google shirt',
+      'img': 'assets/images/tshirt.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 29.99,
+    },
+    {
+      'title': 'Speaker',
+      'img': 'assets/images/product3.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 39.99,
+    }
+  ];
+  final color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,11 +69,11 @@ class ItemCard extends StatelessWidget {
           ClipRRect(
             child: Container(
               height: 120,
-              color: const Color.fromRGBO(255, 222, 155, 1),
+              color: color,
               child: SizedBox(
                 width: 90,
                 child: Image.asset(
-                  'assets/images/tshirt.png',
+                  item['img'],
                 ),
               ),
             ),
@@ -38,18 +87,18 @@ class ItemCard extends StatelessWidget {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                'Nike Air Zoom',
+                item['title'],
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
               ),
               Text(
-                'Reinvigorate your stride with the Nike Air Zoom Pegasus 37',
+                item['description'],
                 style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
                 overflow: TextOverflow.clip,
               ),
               Text(
-                '\$60',
+                '\$${item['price']}',
                 style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
               ),
             ],

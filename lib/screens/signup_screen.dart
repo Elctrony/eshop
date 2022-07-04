@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignupScreen extends StatelessWidget {

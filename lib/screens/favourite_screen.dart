@@ -101,6 +101,7 @@ class FavouriteScreen extends StatelessWidget {
                     path: listItem[index]['img'],
                     price: listItem[index]['price'],
                     isFavourite: listItem[index]['isFavourite'],
+                    color: colorAvaliable[index%colorAvaliable.length],
                   ),
                 ),
               )

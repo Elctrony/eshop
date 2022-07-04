@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:eshop/utils/colors.dart';
 import 'package:eshop/widgets/bottom_navigation.dart';
 import 'package:eshop/widgets/item_card.dart';
@@ -13,6 +15,50 @@ class HomeScreen extends StatelessWidget {
     {'name': 'IPhone', 'path': 'assets/images/iphone.png', 'price': 1600}
   ];
 
+  final List<Map<String, dynamic>> listItem = [
+    {
+      'title': 'Apple Watch',
+      'img': 'assets/images/apple.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 59.99,
+    },
+    {
+      'title': 'IPhone',
+      'img': 'assets/images/iphone.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 1059.99,
+    },
+    {
+      'title': 'Air jorden',
+      'img': 'assets/images/airjorden.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 79.99,
+    },
+    {
+      'title': 'Airpods',
+      'img': 'assets/images/airpod_product.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 64.99,
+    },
+    {
+      'title': 'Amazon Speakre',
+      'img': 'assets/images/amazon.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 159.99,
+    },
+    {
+      'title': 'Google shirt',
+      'img': 'assets/images/tshirt.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 29.99,
+    },
+    {
+      'title': 'Speaker',
+      'img': 'assets/images/product3.png',
+      'description': 'Lorem Ipsum is simply dummy text of the printing and',
+      'price': 39.99,
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -109,6 +155,7 @@ class HomeScreen extends StatelessWidget {
                       name: itemsList[i]['name'],
                       path: itemsList[i]['path'],
                       price: itemsList[i]['price'],
+                      color: colorAvaliable.reversed.toList()[i%colorAvaliable.length],
                     ),
                     itemCount: itemsList.length,
                     scrollDirection: Axis.horizontal,
@@ -146,7 +193,10 @@ class HomeScreen extends StatelessWidget {
                       vertical: 12.0,
                     ),
                     child: ListView.builder(
-                      itemBuilder: (ctx, i) => ItemCard(),
+                      itemBuilder: (ctx, i) => ItemCard(
+                        item: listItem[i],
+color: colorAvaliable[i%colorAvaliable.length],
+                      ),
                       itemCount: 6,
                       scrollDirection: Axis.vertical,
                     ),
@@ -210,11 +260,12 @@ class MiniItemCard extends StatelessWidget {
       {Key? key,
       @required this.name,
       @required this.path,
-      @required this.price})
+      @required this.price,@required this.color})
       : super(key: key);
   final name;
   final path;
   final price;
+  final color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -230,7 +281,7 @@ class MiniItemCard extends StatelessWidget {
             child: Container(
               height: 120,
               width: 150,
-              color: const Color.fromRGBO(208, 227, 250, 1),
+              color: color,
               child: Image.asset(path),
             ),
             borderRadius: const BorderRadius.only(
@@ -238,10 +289,9 @@ class MiniItemCard extends StatelessWidget {
               topRight: Radius.circular(25),
             ),
           ),
-          SizedBox(
-            child: Row(
+          Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -265,7 +315,7 @@ class MiniItemCard extends StatelessWidget {
                     icon: SvgPicture.asset('assets/images/favorite.svg'))
               ],
             ),
-          )
+
         ],
       ),
     );

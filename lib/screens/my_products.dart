@@ -87,7 +87,11 @@ class MyProducts extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 18),
-              const ItemCard(),
+              ItemCard(
+                item: listItem[0],
+                  color:
+                  colorAvaliable[2]
+              ),
               const SizedBox(height: 16),
               Expanded(
                 child: GridView.builder(
@@ -102,7 +106,7 @@ class MyProducts extends StatelessWidget {
                     price: listItem[index]['price'],
                     isFavourite: listItem[index]['isFavourite'],
                     color:
-                        colorAvaliable[Random().nextInt(colorAvaliable.length)],
+                        colorAvaliable[index%colorAvaliable.length],
                   ),
                 ),
               )
